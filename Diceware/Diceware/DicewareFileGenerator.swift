@@ -25,11 +25,7 @@ class DicewareFileGenerator {
    }
    
    func word(forValue value: Int) -> String? {
-      if isValidIndex(value) {
-         return words[value]
-      } else {
-         return nil
-      }
+      return isValidIndex(value) ? words[value] : nil
    }
    
    fileprivate func randomWord() -> String {
@@ -48,7 +44,7 @@ class DicewareFileGenerator {
       }
       
       return fileData.components(separatedBy: CharacterSet.newlines)
-                     .map { $0.trimmingCharacters(in: CharacterSet.whitespaces)}
+                     .map { $0.trimmingCharacters(in: CharacterSet.whitespaces) }
    }
 }
 
