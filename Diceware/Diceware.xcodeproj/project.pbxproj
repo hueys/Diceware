@@ -12,8 +12,12 @@
 		AA86B4E51F32183F00063749 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA86B4E31F32183F00063749 /* Main.storyboard */; };
 		AA86B4E71F32183F00063749 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA86B4E61F32183F00063749 /* Assets.xcassets */; };
 		AA86B4EA1F32183F00063749 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA86B4E81F32183F00063749 /* LaunchScreen.storyboard */; };
-		AA86B4F51F32183F00063749 /* DicewareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA86B4F41F32183F00063749 /* DicewareTests.swift */; };
 		AA86B5011F3218F400063749 /* diceware8k.txt in Resources */ = {isa = PBXBuildFile; fileRef = AA86B5001F3218F400063749 /* diceware8k.txt */; };
+		AA86B5031F32196300063749 /* Diceware.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA86B5021F32196300063749 /* Diceware.swift */; };
+		AA86B5041F32196300063749 /* Diceware.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA86B5021F32196300063749 /* Diceware.swift */; };
+		AA86B5061F3219C700063749 /* DicewareFileGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA86B5051F3219C700063749 /* DicewareFileGenerator.swift */; };
+		AA86B5071F3219C700063749 /* DicewareFileGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA86B5051F3219C700063749 /* DicewareFileGenerator.swift */; };
+		AA86B5091F322BE300063749 /* DicewareFileGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA86B5081F322BE300063749 /* DicewareFileGeneratorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +39,11 @@
 		AA86B4E91F32183F00063749 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA86B4EB1F32183F00063749 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA86B4F01F32183F00063749 /* DicewareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DicewareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA86B4F41F32183F00063749 /* DicewareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DicewareTests.swift; sourceTree = "<group>"; };
 		AA86B4F61F32183F00063749 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA86B5001F3218F400063749 /* diceware8k.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = diceware8k.txt; sourceTree = "<group>"; };
+		AA86B5021F32196300063749 /* Diceware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Diceware.swift; sourceTree = "<group>"; };
+		AA86B5051F3219C700063749 /* DicewareFileGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DicewareFileGenerator.swift; sourceTree = "<group>"; };
+		AA86B5081F322BE300063749 /* DicewareFileGeneratorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DicewareFileGeneratorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,8 @@
 			children = (
 				AA86B4DF1F32183F00063749 /* AppDelegate.swift */,
 				AA86B4E11F32183F00063749 /* ViewController.swift */,
+				AA86B5021F32196300063749 /* Diceware.swift */,
+				AA86B5051F3219C700063749 /* DicewareFileGenerator.swift */,
 				AA86B4E31F32183F00063749 /* Main.storyboard */,
 				AA86B4FF1F32188400063749 /* Resources */,
 			);
@@ -90,8 +98,8 @@
 		AA86B4F31F32183F00063749 /* DicewareTests */ = {
 			isa = PBXGroup;
 			children = (
-				AA86B4F41F32183F00063749 /* DicewareTests.swift */,
 				AA86B4F61F32183F00063749 /* Info.plist */,
+				AA86B5081F322BE300063749 /* DicewareFileGeneratorTests.swift */,
 			);
 			path = DicewareTests;
 			sourceTree = "<group>";
@@ -212,7 +220,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA86B4E21F32183F00063749 /* ViewController.swift in Sources */,
+				AA86B5061F3219C700063749 /* DicewareFileGenerator.swift in Sources */,
 				AA86B4E01F32183F00063749 /* AppDelegate.swift in Sources */,
+				AA86B5031F32196300063749 /* Diceware.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,7 +230,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA86B4F51F32183F00063749 /* DicewareTests.swift in Sources */,
+				AA86B5071F3219C700063749 /* DicewareFileGenerator.swift in Sources */,
+				AA86B5091F322BE300063749 /* DicewareFileGeneratorTests.swift in Sources */,
+				AA86B5041F32196300063749 /* Diceware.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
