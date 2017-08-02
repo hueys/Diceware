@@ -80,9 +80,7 @@
 				AA86B4DF1F32183F00063749 /* AppDelegate.swift */,
 				AA86B4E11F32183F00063749 /* ViewController.swift */,
 				AA86B4E31F32183F00063749 /* Main.storyboard */,
-				AA86B4E61F32183F00063749 /* Assets.xcassets */,
-				AA86B4E81F32183F00063749 /* LaunchScreen.storyboard */,
-				AA86B4EB1F32183F00063749 /* Info.plist */,
+				AA86B4FF1F32188400063749 /* Resources */,
 			);
 			path = Diceware;
 			sourceTree = "<group>";
@@ -94,6 +92,16 @@
 				AA86B4F61F32183F00063749 /* Info.plist */,
 			);
 			path = DicewareTests;
+			sourceTree = "<group>";
+		};
+		AA86B4FF1F32188400063749 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AA86B4E61F32183F00063749 /* Assets.xcassets */,
+				AA86B4EB1F32183F00063749 /* Info.plist */,
+				AA86B4E81F32183F00063749 /* LaunchScreen.storyboard */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
