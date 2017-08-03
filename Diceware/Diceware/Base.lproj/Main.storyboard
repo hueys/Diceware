@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,51 +22,126 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="abc-defg-hijklmn-qrst" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2s0-oc-2K8">
-                                <rect key="frame" x="16" y="91" width="343" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="2s0-oc-2K8">
+                                <rect key="frame" x="16" y="96" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="RE5-n3-oEu"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="6" translatesAutoresizingMaskIntoConstraints="NO" id="lJW-7M-lBy">
-                                <rect key="frame" x="30" y="190" width="312" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="6" translatesAutoresizingMaskIntoConstraints="NO" id="lJW-7M-lBy">
+                                <rect key="frame" x="29" y="190" width="313" height="31"/>
+                                <color key="tintColor" red="0.17254901959999999" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="thumbTintColor" red="0.17254901959999999" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="sliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="OAL-oF-7A8"/>
+                                </connections>
                             </slider>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRE-4x-jHf">
-                                <rect key="frame" x="32" y="293" width="187" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRE-4x-jHf" customClass="PressableButton" customModule="SwiftyButton">
+                                <rect key="frame" x="31" y="240" width="150.5" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="s0p-Rh-Fm0"/>
+                                </constraints>
                                 <state key="normal" title="Generate"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="generatePassphrase:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9ad-Bt-ZWH"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FlW-A5-sed">
-                                <rect key="frame" x="125" y="617" width="125" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Copy Password"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCq-Vk-j7y">
-                                <rect key="frame" x="16" y="195" width="8" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCq-Vk-j7y">
+                                <rect key="frame" x="15" y="195" width="8" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.17254901959999999" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deu-hN-GJk">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deu-hN-GJk">
                                 <rect key="frame" x="348" y="195" width="11" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.17254901959999999" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of Words" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mDF-Ro-zvy">
-                                <rect key="frame" x="15" y="161" width="343" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Words" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mDF-Ro-zvy">
+                                <rect key="frame" x="15" y="153" width="344" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.17254901959999999" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qG3-ZX-39R">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="0Fq-92-gwC"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="barTintColor" red="0.17254901959999999" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Diceware" id="S59-hE-I2r"/>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FlW-A5-sed" customClass="PressableButton" customModule="SwiftyButton">
+                                <rect key="frame" x="189.5" y="240" width="150.5" height="36"/>
+                                <state key="normal" title="Copy"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="copyPassphrase:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A93-LX-8mp"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="lJW-7M-lBy" firstAttribute="trailing" secondItem="FlW-A5-sed" secondAttribute="trailing" id="0FG-wy-xhv"/>
+                            <constraint firstItem="2s0-oc-2K8" firstAttribute="top" secondItem="qG3-ZX-39R" secondAttribute="bottom" constant="32" id="7O5-0v-P3E"/>
+                            <constraint firstItem="qG3-ZX-39R" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="GxF-D0-4jQ"/>
+                            <constraint firstItem="deu-hN-GJk" firstAttribute="top" secondItem="mDF-Ro-zvy" secondAttribute="bottom" constant="21" id="Hge-cv-vJF"/>
+                            <constraint firstItem="FlW-A5-sed" firstAttribute="top" secondItem="lJW-7M-lBy" secondAttribute="bottom" constant="20" id="K1V-y0-PT7"/>
+                            <constraint firstItem="JRE-4x-jHf" firstAttribute="width" secondItem="FlW-A5-sed" secondAttribute="width" id="M8R-qv-9bv"/>
+                            <constraint firstItem="lJW-7M-lBy" firstAttribute="leading" secondItem="vCq-Vk-j7y" secondAttribute="trailing" constant="8" id="OhG-sJ-o03"/>
+                            <constraint firstItem="mDF-Ro-zvy" firstAttribute="leading" secondItem="vCq-Vk-j7y" secondAttribute="leading" id="RHb-bi-4TV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mDF-Ro-zvy" secondAttribute="trailing" id="SR4-xP-Ic9"/>
+                            <constraint firstItem="vCq-Vk-j7y" firstAttribute="top" secondItem="mDF-Ro-zvy" secondAttribute="bottom" constant="21" id="WVT-hy-UpO"/>
+                            <constraint firstItem="lJW-7M-lBy" firstAttribute="leading" secondItem="JRE-4x-jHf" secondAttribute="leading" id="Y87-11-yVt"/>
+                            <constraint firstItem="FlW-A5-sed" firstAttribute="leading" secondItem="JRE-4x-jHf" secondAttribute="trailing" constant="8" id="Z1a-Hz-D6D"/>
+                            <constraint firstItem="lJW-7M-lBy" firstAttribute="centerY" secondItem="deu-hN-GJk" secondAttribute="centerY" id="dE4-ko-xXB"/>
+                            <constraint firstItem="mDF-Ro-zvy" firstAttribute="trailing" secondItem="deu-hN-GJk" secondAttribute="trailing" id="ext-j0-Dyn"/>
+                            <constraint firstItem="JRE-4x-jHf" firstAttribute="top" secondItem="lJW-7M-lBy" secondAttribute="bottom" constant="20" id="fob-gy-a3l"/>
+                            <constraint firstItem="deu-hN-GJk" firstAttribute="leading" secondItem="lJW-7M-lBy" secondAttribute="trailing" constant="8" id="fsC-Ll-Q9N"/>
+                            <constraint firstItem="lJW-7M-lBy" firstAttribute="top" secondItem="mDF-Ro-zvy" secondAttribute="bottom" constant="16" id="fte-Ua-k8l"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2s0-oc-2K8" secondAttribute="trailing" id="g4H-em-NNb"/>
+                            <constraint firstItem="lJW-7M-lBy" firstAttribute="centerY" secondItem="vCq-Vk-j7y" secondAttribute="centerY" id="jVF-GP-Ado"/>
+                            <constraint firstItem="mDF-Ro-zvy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-1" id="kYC-as-v3l"/>
+                            <constraint firstItem="JRE-4x-jHf" firstAttribute="height" secondItem="FlW-A5-sed" secondAttribute="height" id="mZx-OJ-95d"/>
+                            <constraint firstItem="qG3-ZX-39R" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="oOV-fz-7lC"/>
+                            <constraint firstAttribute="trailing" secondItem="qG3-ZX-39R" secondAttribute="trailing" id="oOx-q4-NqL"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="2s0-oc-2K8" secondAttribute="leading" id="wVh-9H-t9c"/>
+                            <constraint firstItem="mDF-Ro-zvy" firstAttribute="top" secondItem="2s0-oc-2K8" secondAttribute="bottom" constant="36" id="zld-XV-b9W"/>
+                        </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="copyButton" destination="FlW-A5-sed" id="9gD-Dq-Tb0"/>
+                        <outlet property="generateButton" destination="JRE-4x-jHf" id="f91-0c-j6T"/>
+                        <outlet property="passphraseLabel" destination="2s0-oc-2K8" id="SOk-tN-xsX"/>
+                        <outlet property="slider" destination="lJW-7M-lBy" id="NNR-pi-wZP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

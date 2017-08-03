@@ -45,6 +45,7 @@ class DicewareFileGenerator {
       
       return fileData.components(separatedBy: CharacterSet.newlines)
                      .map { $0.trimmingCharacters(in: CharacterSet.whitespaces) }
+                     .filter { $0.characters.count > 0 }
    }
 }
 

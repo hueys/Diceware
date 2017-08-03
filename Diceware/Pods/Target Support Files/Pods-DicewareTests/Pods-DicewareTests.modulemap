@@ -1,0 +1,6 @@
+framework module Pods_DicewareTests {
+  umbrella header "Pods-DicewareTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
