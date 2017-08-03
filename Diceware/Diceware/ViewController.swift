@@ -27,6 +27,7 @@ class ViewController: UIViewController {
       generatePassphrase(self)
    }
    
+   // MARK: - UIViewController
    override var preferredStatusBarStyle: UIStatusBarStyle {
       return .lightContent
    }
